@@ -53,13 +53,14 @@ class WeatherService(
 
     private fun getBaseDate(now: LocalDateTime, hour: Int): String {
         val year = now.year.toString()
-        var month = now.monthValue.toString()
-        var day = if(hour < 2) (now.dayOfMonth -1).toString() else now.dayOfMonth.toString()
+        val month = twoDigit(now.monthValue)
+        val day = twoDigit(if(hour < 2) now.minusDays(1).dayOfMonth else now.dayOfMonth)
 
-        if (month.toInt() < 10) month = "0$month"
-        if (day.toInt() < 10) day = "0$day"
+        return "$year$month$day"
+    }
 
-        return year + month + day
+    private fun twoDigit(num: Int): String {
+        return if (num < 10) "0$num" else num.toString()
     }
 
     private fun getUri(baseTime: String, baseDate: String) = UriComponentsBuilder
