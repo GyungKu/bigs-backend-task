@@ -42,13 +42,13 @@ class WeatherService(
         var baseTime = ""
 
         when (hour) {
-            2, 3, 4 -> baseTime = "0200"
-            5, 6, 7 -> baseTime = "0500"
-            8, 9, 10 -> baseTime = "0800"
-            11, 12, 13 -> baseTime = "1100"
-            14, 15, 16 -> baseTime = "1400"
-            17, 18, 19 -> baseTime = "1700"
-            20, 21, 22 -> baseTime = "2000"
+            in 2..4 -> baseTime = "0200"
+            in 5..7 -> baseTime = "0500"
+            in 8..10 -> baseTime = "0800"
+            in 11..13 -> baseTime = "1100"
+            in 14..16 -> baseTime = "1400"
+            in 17..19 -> baseTime = "1700"
+            in 20..22 -> baseTime = "2000"
             else -> "2300"
         }
         return baseTime
