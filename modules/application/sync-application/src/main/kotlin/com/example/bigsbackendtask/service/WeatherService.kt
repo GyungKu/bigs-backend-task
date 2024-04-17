@@ -39,7 +39,7 @@ class WeatherService(
     }
 
     private fun getBaseTime(hour: Int): String {
-        var baseTime = ""
+        val baseTime: String
 
         when (hour) {
             in 2..4 -> baseTime = "0200"
