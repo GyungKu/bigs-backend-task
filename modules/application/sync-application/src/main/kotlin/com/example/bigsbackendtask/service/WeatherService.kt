@@ -39,19 +39,16 @@ class WeatherService(
     }
 
     private fun getBaseTime(hour: Int): String {
-        val baseTime: String
-
-        when (hour) {
-            in 2..4 -> baseTime = "0200"
-            in 5..7 -> baseTime = "0500"
-            in 8..10 -> baseTime = "0800"
-            in 11..13 -> baseTime = "1100"
-            in 14..16 -> baseTime = "1400"
-            in 17..19 -> baseTime = "1700"
-            in 20..22 -> baseTime = "2000"
-            else -> baseTime = "2300"
+        return when (hour) {
+            in 2..4 -> "0200"
+            in 5..7 -> "0500"
+            in 8..10 -> "0800"
+            in 11..13 -> "1100"
+            in 14..16 -> "1400"
+            in 17..19 -> "1700"
+            in 20..22 -> "2000"
+            else -> "2300"
         }
-        return baseTime
     }
 
     private fun getBaseDate(now: LocalDateTime, hour: Int): String {
