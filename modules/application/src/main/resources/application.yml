@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    username: ${MYSQL_USER}
+    password: ${MYSQL_ROOT_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE}
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+open-api:
+  service-key: ${OPEN_API_SERVICE_KEY}
