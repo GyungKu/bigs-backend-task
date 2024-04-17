@@ -49,7 +49,7 @@ class WeatherService(
             in 14..16 -> baseTime = "1400"
             in 17..19 -> baseTime = "1700"
             in 20..22 -> baseTime = "2000"
-            else -> "2300"
+            else -> baseTime = "2300"
         }
         return baseTime
     }
