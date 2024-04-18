@@ -16,12 +16,12 @@ class Weather(baseDate: String,
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long? = null
-    var baseDate: String = baseDate
-    var baseTime: String = baseTime
-    var category: String = category
-    var fcstDate: String = fcstDate
-    var fcstValue: String = fcstValue
-    var nx: Int = nx
-    var ny: Int = ny
+    val id: Long? = null
+    val baseDate: String = baseDate
+    val baseTime: String = baseTime
+    val category: String = category
+    val fcstDate: String = fcstDate
+    val fcstValue: String = fcstValue
+    val nx: Int = nx
+    val ny: Int = ny
 }
