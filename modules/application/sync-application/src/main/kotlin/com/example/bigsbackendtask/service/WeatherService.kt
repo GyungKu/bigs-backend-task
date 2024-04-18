@@ -91,13 +91,13 @@ class WeatherService(
 
         return items.map { item ->
             Weather(
-                    item["baseDate"].asText(),
-                    item["baseTime"].asText(),
-                    item["category"].asText(),
-                    item["fcstDate"].asText(),
-                    item["fcstValue"].asText(),
-                    item["nx"].asInt(),
-                    item["ny"].asInt()
+                    baseDate = item["baseDate"].asText(),
+                    baseTime = item["baseTime"].asText(),
+                    category = item["category"].asText(),
+                    fcstDate = item["fcstDate"].asText(),
+                    fcstValue = item["fcstValue"].asText(),
+                    nx = item["nx"].asInt(),
+                    ny = item["ny"].asInt()
             )
         }
     }
